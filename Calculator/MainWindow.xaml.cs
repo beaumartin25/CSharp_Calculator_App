@@ -73,8 +73,11 @@ namespace Calculator
         {
             if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
             {
-                lastNumber *= -1;
-                resultLabel.Content = lastNumber.ToString();
+                if (lastNumber != 0)
+                {
+                    lastNumber *= -1;
+                    resultLabel.Content = lastNumber.ToString();
+                }
             }
         }
 
